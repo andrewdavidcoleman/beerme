@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import API from './API.js'
 import Select from 'react-select'
 import Recipe from './recipe.js'
+import BeerIcon from './images/beer.png'
 
 class BeerMe extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class BeerMe extends React.Component {
       selectedBeerId: null
     };
 
-    // this.getRecipe = this.getRecipe.bind(this)
   }
 
   getOptions(){
@@ -30,7 +30,6 @@ class BeerMe extends React.Component {
   }
 
   onBeerSelected (selectedBeer){
-    console.log(selectedBeer);
     this.setState({
       selectedBeerId: selectedBeer.value
     })
@@ -58,7 +57,7 @@ class BeerMe extends React.Component {
           <div className='col-3'/>
           <div className='col-6'>
             <div className='row flex-fill align-items-center justify-content-center fade-down-in-delay mb-3'>
-              <img className='mr-2 beer-icon' src='./images/beer.png' />
+              <img className='mr-2 beer-icon' src={ BeerIcon } />
               <h1 className='mb-0 mr-5'>beer me</h1>
             </div>
             <div className='row flex-fill fade-down-in justify-content-center'>
@@ -74,7 +73,12 @@ class BeerMe extends React.Component {
           <div className='col-3'/>
         </div>
         <div className='row flex-fill'>
-        { this.state.selectedBeerId ? <Recipe beerId={this.state.selectedBeerId} /> : null }
+        { this.state.selectedBeerId ?
+          <Recipe
+          beerId={ this.state.selectedBeerId }
+          key={ this.state.selectedBeerId }
+          />
+        : null }
         </div>
         <div className='row flex-fill' />
       </div>

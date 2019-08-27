@@ -11,7 +11,7 @@ class Recipe extends React.Component {
       beerId: this.props.beerId,
       recipe: this.props.beerId ? API.getRecipeByBeerId(this.props.beerId) : null
     }
-    console.log(this.state);
+
   }
 
   render() {

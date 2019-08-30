@@ -1,9 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import BeerMe from "./beer";
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import './style.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './BeerMe.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import BeerMe from './BeerMe';
+import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<BeerMe />, document.getElementById("root"));
+ReactDOM.render(<BeerMe />, document.getElementById('root'));
 
-module.hot.accept();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

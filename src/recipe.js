@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import API from './API.js'
+import React, { Component } from 'react';
+import API from './API.js';
 
 class Recipe extends React.Component {
 

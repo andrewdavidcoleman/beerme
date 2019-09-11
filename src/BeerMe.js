@@ -21,7 +21,7 @@ class BeerMe extends React.Component {
 
     for (var i = 0; i < beers.length; i++) {
       options.push(
-        { value: beers[i].id, label: beers[i].name }
+        { value: beers[i].beerId, label: beers[i].name }
       )
     }
 

@@ -1,22 +1,36 @@
+import axios from "axios";
+
 const API = {
 
-  getAllBeers: function(params){
+  getAllBeers: async function(){
 
     //axios
-    return [
-      {
-        id: 1,
-        name: 'IPA'
-      },
-      {
-        id: 2,
-        name: 'Golden Ale'
-      },
-      {
-        id: 3,
-        name: 'Belgian Wheat'
-      }
-    ]
+    // return [
+    //   {
+    //     id: 1,
+    //     name: 'IPA'
+    //   },
+    //   {
+    //     id: 2,
+    //     name: 'Golden Ale'
+    //   },
+    //   {
+    //     id: 3,
+    //     name: 'Belgian Wheat'
+    //   }
+    // ]
+    await axios.get('https://shrouded-island-27616.herokuapp.com/', {
+      params: { }
+    })
+    .then(function (res) {
+      return res;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .finally(function () {
+      console.log('finally');
+    });
 
   },
 
